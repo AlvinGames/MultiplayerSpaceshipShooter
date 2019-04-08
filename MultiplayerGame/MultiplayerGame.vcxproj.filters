@@ -35,6 +35,9 @@
     <ClInclude Include="Book\ResourceHolder.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Book\Foreach.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Book\StringHelpers.inl">
