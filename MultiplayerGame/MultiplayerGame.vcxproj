@@ -126,12 +126,14 @@
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="SceneNode.cpp" />
+    <ClCompile Include="SpriteNode.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Book\Foreach.hpp" />
     <ClInclude Include="Book\Game.hpp" />
     <ClInclude Include="Book\ResourceHolder.hpp" />
     <ClInclude Include="Book\SceneNode.hpp" />
+    <ClInclude Include="Book\SpriteNode.hpp" />
     <ClInclude Include="Book\StringHelpers.hpp" />
     <ClInclude Include="config.hpp" />
   </ItemGroup>
