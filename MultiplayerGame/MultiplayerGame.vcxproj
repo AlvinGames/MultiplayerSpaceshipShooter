@@ -126,10 +126,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Book\Game.hpp" />
+    <ClInclude Include="Book\ResourceHolder.hpp" />
     <ClInclude Include="Book\StringHelpers.hpp" />
     <ClInclude Include="config.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Book\ResourceHolder.inl" />
     <None Include="Book\StringHelpers.inl" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
