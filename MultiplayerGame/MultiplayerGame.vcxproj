@@ -123,6 +123,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Aircraft.cpp" />
     <ClCompile Include="Entity.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Main.cpp" />
@@ -130,6 +131,7 @@
     <ClCompile Include="SpriteNode.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Book\Aircraft.hpp" />
     <ClInclude Include="Book\Entity.hpp" />
     <ClInclude Include="Book\Foreach.hpp" />
     <ClInclude Include="Book\Game.hpp" />
