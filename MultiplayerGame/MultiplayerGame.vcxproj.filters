@@ -56,6 +56,9 @@
     <ClInclude Include="Book\Entity.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Book\ResourceIdentifiers.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Book\StringHelpers.inl">

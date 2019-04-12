@@ -134,6 +134,7 @@
     <ClInclude Include="Book\Foreach.hpp" />
     <ClInclude Include="Book\Game.hpp" />
     <ClInclude Include="Book\ResourceHolder.hpp" />
+    <ClInclude Include="Book\ResourceIdentifiers.hpp" />
     <ClInclude Include="Book\SceneNode.hpp" />
     <ClInclude Include="Book\SpriteNode.hpp" />
     <ClInclude Include="Book\StringHelpers.hpp" />
