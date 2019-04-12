@@ -1,4 +1,5 @@
 #include "Book/SceneNode.hpp"
+#include "Book/Command.hpp"
 #include "Book/Foreach.hpp"
 
 #include <algorithm>
@@ -79,4 +80,20 @@ sf::Transform SceneNode::getWorldTransform() const
 		transform = node->getTransform() * transform;
 
 	return transform;
+}
+
+void SceneNode::onCommand(const Command& command, sf::Time dt)
+{
+	// Command current node, if category matches
+	if (command.category & getCategory())
+		command.action(*this, dt);
+
+	// Command children
+	FOREACH(Ptr& child, mChildren)
+		child->onCommand(command, dt);
+}
+
+unsigned int SceneNode::getCategory() const
+{
+	return Category::Scene;
 }
