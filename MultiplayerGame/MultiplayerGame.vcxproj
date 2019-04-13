@@ -124,6 +124,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Aircraft.cpp" />
+    <ClCompile Include="Player.cpp" />
+    <ClCompile Include="Command.cpp" />
+    <ClCompile Include="CommandQueue.cpp" />
     <ClCompile Include="Entity.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="Main.cpp" />
@@ -133,9 +136,13 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Book\Aircraft.hpp" />
+    <ClInclude Include="Book\Category.hpp" />
+    <ClInclude Include="Book\Command.hpp" />
+    <ClInclude Include="Book\CommandQueue.hpp" />
     <ClInclude Include="Book\Entity.hpp" />
     <ClInclude Include="Book\Foreach.hpp" />
     <ClInclude Include="Book\Game.hpp" />
+    <ClInclude Include="Book\Player.hpp" />
     <ClInclude Include="Book\ResourceHolder.hpp" />
     <ClInclude Include="Book\ResourceIdentifiers.hpp" />
     <ClInclude Include="Book\SceneNode.hpp" />
