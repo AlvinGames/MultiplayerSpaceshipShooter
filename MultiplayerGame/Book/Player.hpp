@@ -32,7 +32,6 @@ public:
 	void					assignKey(Action action, sf::Keyboard::Key key);
 	sf::Keyboard::Key		getAssignedKey(Action action) const;
 
-
 private:
 	void					initializeActions();
 	static bool				isRealtimeAction(Action action);

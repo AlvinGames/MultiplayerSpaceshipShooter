@@ -124,7 +124,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Aircraft.cpp" />
+    <ClCompile Include="Button.cpp" />
+    <ClCompile Include="Component.cpp" />
+    <ClCompile Include="Container.cpp" />
     <ClCompile Include="GameState.cpp" />
+    <ClCompile Include="Label.cpp" />
     <ClCompile Include="LoadingState.cpp" />
     <ClCompile Include="MenuState.cpp" />
     <ClCompile Include="ParallelTask.cpp" />
@@ -136,6 +140,7 @@
     <ClCompile Include="Application.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="SceneNode.cpp" />
+    <ClCompile Include="SettingsState.cpp" />
     <ClCompile Include="SpriteNode.cpp" />
     <ClCompile Include="State.cpp" />
     <ClCompile Include="StateStack.cpp" />
@@ -145,13 +150,17 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Book\Aircraft.hpp" />
+    <ClInclude Include="Book\Button.hpp" />
     <ClInclude Include="Book\Category.hpp" />
     <ClInclude Include="Book\Command.hpp" />
     <ClInclude Include="Book\CommandQueue.hpp" />
+    <ClInclude Include="Book\Component.hpp" />
+    <ClInclude Include="Book\Container.hpp" />
     <ClInclude Include="Book\Entity.hpp" />
     <ClInclude Include="Book\Foreach.hpp" />
     <ClInclude Include="Book\Application.hpp" />
     <ClInclude Include="Book\GameState.hpp" />
+    <ClInclude Include="Book\Label.hpp" />
     <ClInclude Include="Book\LoadingState.hpp" />
     <ClInclude Include="Book\MenuState.hpp" />
     <ClInclude Include="Book\ParallelTask.hpp" />
@@ -160,6 +169,7 @@
     <ClInclude Include="Book\ResourceHolder.hpp" />
     <ClInclude Include="Book\ResourceIdentifiers.hpp" />
     <ClInclude Include="Book\SceneNode.hpp" />
+    <ClInclude Include="Book\SettingsState.hpp" />
     <ClInclude Include="Book\SpriteNode.hpp" />
     <ClInclude Include="Book\State.hpp" />
     <ClInclude Include="Book\StateIdentifiers.hpp" />

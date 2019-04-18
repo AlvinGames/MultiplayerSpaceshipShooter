@@ -2,6 +2,7 @@
 #define BOOK_MENUSTATE_HPP
 
 #include "State.hpp"
+#include "Container.hpp"
 
 #include <SFML/Graphics/Sprite.hpp>
 #include <SFML/Graphics/Text.hpp>
@@ -9,29 +10,17 @@
 
 class MenuState : public State
 {
-public:
-	MenuState(StateStack& stack, Context context);
+	public:
+								MenuState(StateStack& stack, Context context);
 
-	virtual void			draw();
-	virtual bool			update(sf::Time dt);
-	virtual bool			handleEvent(const sf::Event& event);
-
-	void					updateOptionText();
+		virtual void			draw();
+		virtual bool			update(sf::Time dt);
+		virtual bool			handleEvent(const sf::Event& event);
 
 
-private:
-	enum OptionNames
-	{
-		Play,
-		Exit,
-	};
-
-
-private:
-	sf::Sprite				mBackgroundSprite;
-
-	std::vector<sf::Text>	mOptions;
-	std::size_t				mOptionIndex;
+	private:
+		sf::Sprite				mBackgroundSprite;
+		GUI::Container			mGUIContainer;
 };
 
 #endif // BOOK_MENUSTATE_HPP
