@@ -169,7 +169,7 @@ void World::handleCollisions()
 			pickup.destroy();
 		}
 
-		else if (matchesCategories(pair, Category::EnemyAircraft, Category::AlliedProjectile) 
+		else if (matchesCategories(pair, Category::EnemyAircraft, Category::AlliedProjectile)
 			  || matchesCategories(pair, Category::PlayerAircraft, Category::EnemyProjectile))
 		{
 			auto& aircraft = static_cast<Aircraft&>(*pair.first);
