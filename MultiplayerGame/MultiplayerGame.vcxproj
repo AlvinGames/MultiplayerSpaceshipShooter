@@ -124,16 +124,20 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Aircraft.cpp" />
+    <ClCompile Include="Animation.cpp" />
+    <ClCompile Include="BloomEffect.cpp" />
     <ClCompile Include="Button.cpp" />
     <ClCompile Include="Component.cpp" />
     <ClCompile Include="Container.cpp" />
     <ClCompile Include="DataTables.cpp" />
+    <ClCompile Include="EmitterNode.cpp" />
     <ClCompile Include="GameOverState.cpp" />
     <ClCompile Include="GameState.cpp" />
     <ClCompile Include="Label.cpp" />
     <ClCompile Include="LoadingState.cpp" />
     <ClCompile Include="MenuState.cpp" />
     <ClCompile Include="ParallelTask.cpp" />
+    <ClCompile Include="ParticleNode.cpp" />
     <ClCompile Include="PauseState.cpp" />
     <ClCompile Include="Pickup.cpp" />
     <ClCompile Include="Player.cpp" />
@@ -142,6 +146,7 @@
     <ClCompile Include="Entity.cpp" />
     <ClCompile Include="Application.cpp" />
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="PostEffect.cpp" />
     <ClCompile Include="Projectile.cpp" />
     <ClCompile Include="SceneNode.cpp" />
     <ClCompile Include="SettingsState.cpp" />
@@ -155,6 +160,8 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Book\Aircraft.hpp" />
+    <ClInclude Include="Book\Animation.hpp" />
+    <ClInclude Include="Book\BloomEffect.hpp" />
     <ClInclude Include="Book\Button.hpp" />
     <ClInclude Include="Book\Category.hpp" />
     <ClInclude Include="Book\Command.hpp" />
@@ -162,6 +169,7 @@
     <ClInclude Include="Book\Component.hpp" />
     <ClInclude Include="Book\Container.hpp" />
     <ClInclude Include="Book\DataTables.hpp" />
+    <ClInclude Include="Book\EmitterNode.hpp" />
     <ClInclude Include="Book\Entity.hpp" />
     <ClInclude Include="Book\Foreach.hpp" />
     <ClInclude Include="Book\Application.hpp" />
@@ -171,9 +179,12 @@
     <ClInclude Include="Book\LoadingState.hpp" />
     <ClInclude Include="Book\MenuState.hpp" />
     <ClInclude Include="Book\ParallelTask.hpp" />
+    <ClInclude Include="Book\Particle.hpp" />
+    <ClInclude Include="Book\ParticleNode.hpp" />
     <ClInclude Include="Book\PauseState.hpp" />
     <ClInclude Include="Book\Pickup.hpp" />
     <ClInclude Include="Book\Player.hpp" />
+    <ClInclude Include="Book\PostEffect.hpp" />
     <ClInclude Include="Book\Projectile.hpp" />
     <ClInclude Include="Book\ResourceHolder.hpp" />
     <ClInclude Include="Book\ResourceIdentifiers.hpp" />

@@ -13,7 +13,7 @@
 const sf::Time Application::TimePerFrame = sf::seconds(1.f / 60.f);
 
 Application::Application()
-: mWindow(sf::VideoMode(640, 480), "Gameplay", sf::Style::Close)
+: mWindow(sf::VideoMode(1024, 768), "Graphics", sf::Style::Close)
 , mTextures()
 , mFonts()
 , mPlayer()
@@ -26,10 +26,8 @@ Application::Application()
 
 	mFonts.load(Fonts::Main, 	"Media/Sansation.ttf");
 
-	mTextures.load(Textures::TitleScreen,		"Media/Textures/TitleScreen.png");
-	mTextures.load(Textures::ButtonNormal,		"Media/Textures/ButtonNormal.png");
-	mTextures.load(Textures::ButtonSelected,	"Media/Textures/ButtonSelected.png");
-	mTextures.load(Textures::ButtonPressed,		"Media/Textures/ButtonPressed.png");
+	mTextures.load(Textures::TitleScreen,	"Media/Textures/TitleScreen.png");
+	mTextures.load(Textures::Buttons,		"Media/Textures/Buttons.png");
 
 	mStatisticsText.setFont(mFonts.get(Fonts::Main));
 	mStatisticsText.setPosition(5.f, 5.f);
