@@ -9,6 +9,7 @@
 #include "CommandQueue.hpp"
 #include "Command.hpp"
 #include "BloomEffect.hpp"
+#include "SoundPlayer.hpp"
 
 #include <SFML/System/NonCopyable.hpp>
 #include <SFML/Graphics/View.hpp>
@@ -27,7 +28,7 @@ namespace sf
 class World : private sf::NonCopyable
 {
 public:
-	explicit							World(sf::RenderTarget& outputTarget, FontHolder& fonts);
+	World(sf::RenderTarget& outputTarget, FontHolder& fonts, SoundPlayer& sounds);
 	void								update(sf::Time dt);
 	void								draw();
 
@@ -42,6 +43,7 @@ private:
 	void								adaptPlayerPosition();
 	void								adaptPlayerVelocity();
 	void								handleCollisions();
+	void								updateSounds();
 
 	void								buildScene();
 	void								addEnemies();
@@ -83,6 +85,7 @@ private:
 	sf::View							mWorldView;
 	TextureHolder						mTextures;
 	FontHolder&							mFonts;
+	SoundPlayer&						mSounds;
 
 	SceneNode							mSceneGraph;
 	std::array<SceneNode*, LayerCount>	mSceneLayers;
