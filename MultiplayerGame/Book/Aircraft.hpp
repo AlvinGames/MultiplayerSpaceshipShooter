@@ -39,6 +39,7 @@ class Aircraft : public Entity
 
 		void 					fire();
 		void					launchMissile();
+		void					playLocalSound(CommandQueue& commands, SoundEffect::ID effect);
 
 
 	private:
@@ -66,6 +67,7 @@ class Aircraft : public Entity
 		bool 					mIsFiring;
 		bool					mIsLaunchingMissile;
 		bool 					mShowExplosion;
+		bool					mPlayedExplosionSound;
 		bool					mSpawnedPickup;
 
 		int						mFireRateLevel;

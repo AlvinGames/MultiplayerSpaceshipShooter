@@ -3,6 +3,7 @@
 #include "Book/Utility.hpp"
 #include "Book/Pickup.hpp"
 #include "Book/CommandQueue.hpp"
+#include "Book/SoundNode.hpp"
 #include "Book/ResourceHolder.hpp"
 
 #include <SFML/Graphics/RenderTarget.hpp>
@@ -10,6 +11,8 @@
 
 #include <cmath>
 
+
+using namespace std::placeholders;
 
 namespace
 {
@@ -27,6 +30,7 @@ Aircraft::Aircraft(Type type, const TextureHolder& textures, const FontHolder& f
 , mIsFiring(false)
 , mIsLaunchingMissile(false)
 , mShowExplosion(true)
+, mPlayedExplosionSound(false)
 , mSpawnedPickup(false)
 , mFireRateLevel(1)
 , mSpreadLevel(1)
@@ -96,6 +100,15 @@ void Aircraft::updateCurrent(sf::Time dt, CommandQueue& commands)
 	{
 		checkPickupDrop(commands);
 		mExplosion.update(dt);
+
+		// Play explosion sound only once
+		if (!mPlayedExplosionSound)
+		{
+			SoundEffect::ID soundEffect = (randomInt(2) == 0) ? SoundEffect::Explosion1 : SoundEffect::Explosion2;
+			playLocalSound(commands, soundEffect);
+
+			mPlayedExplosionSound = true;
+		}
 		return;
 	}
 
@@ -174,6 +187,21 @@ void Aircraft::launchMissile()
 	}
 }
 
+void Aircraft::playLocalSound(CommandQueue& commands, SoundEffect::ID effect)
+{
+	sf::Vector2f worldPosition = getWorldPosition();
+
+	Command command;
+	command.category = Category::SoundEffect;
+	command.action = derivedAction<SoundNode>(
+		[effect, worldPosition](SoundNode& node, sf::Time)
+	{
+		node.playSound(effect, worldPosition);
+	});
+
+	commands.push(command);
+}
+
 void Aircraft::updateMovementPattern(sf::Time dt)
 {
 	// Enemy airplane: Movement pattern
@@ -217,6 +245,8 @@ void Aircraft::checkProjectileLaunch(sf::Time dt, CommandQueue& commands)
 	{
 		// Interval expired: We can fire a new bullet
 		commands.push(mFireCommand);
+		playLocalSound(commands, isAllied() ? SoundEffect::AlliedGunfire : SoundEffect::EnemyGunfire);
+
 		mFireCountdown += Table[mType].fireInterval / (mFireRateLevel + 1.f);
 		mIsFiring = false;
 	}
@@ -231,6 +261,8 @@ void Aircraft::checkProjectileLaunch(sf::Time dt, CommandQueue& commands)
 	if (mIsLaunchingMissile)
 	{
 		commands.push(mMissileCommand);
+		playLocalSound(commands, SoundEffect::LaunchMissile);
+
 		mIsLaunchingMissile = false;
 	}
 }
@@ -241,20 +273,20 @@ void Aircraft::createBullets(SceneNode& node, const TextureHolder& textures) con
 
 	switch (mSpreadLevel)
 	{
-		case 1:
-			createProjectile(node, type, 0.0f, 0.5f, textures);
-			break;
+	case 1:
+		createProjectile(node, type, 0.0f, 0.5f, textures);
+		break;
 
-		case 2:
-			createProjectile(node, type, -0.33f, 0.33f, textures);
-			createProjectile(node, type, +0.33f, 0.33f, textures);
-			break;
+	case 2:
+		createProjectile(node, type, -0.33f, 0.33f, textures);
+		createProjectile(node, type, +0.33f, 0.33f, textures);
+		break;
 
-		case 3:
-			createProjectile(node, type, -0.5f, 0.33f, textures);
-			createProjectile(node, type,  0.0f, 0.5f, textures);
-			createProjectile(node, type, +0.5f, 0.33f, textures);
-			break;
+	case 3:
+		createProjectile(node, type, -0.5f, 0.33f, textures);
+		createProjectile(node, type,  0.0f, 0.5f, textures);
+		createProjectile(node, type, +0.5f, 0.33f, textures);
+		break;
 	}
 }
 
