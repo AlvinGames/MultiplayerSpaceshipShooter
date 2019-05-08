@@ -136,6 +136,7 @@
     <ClCompile Include="Label.cpp" />
     <ClCompile Include="LoadingState.cpp" />
     <ClCompile Include="MenuState.cpp" />
+    <ClCompile Include="MusicPlayer.cpp" />
     <ClCompile Include="ParallelTask.cpp" />
     <ClCompile Include="ParticleNode.cpp" />
     <ClCompile Include="PauseState.cpp" />
@@ -150,6 +151,8 @@
     <ClCompile Include="Projectile.cpp" />
     <ClCompile Include="SceneNode.cpp" />
     <ClCompile Include="SettingsState.cpp" />
+    <ClCompile Include="SoundNode.cpp" />
+    <ClCompile Include="SoundPlayer.cpp" />
     <ClCompile Include="SpriteNode.cpp" />
     <ClCompile Include="State.cpp" />
     <ClCompile Include="StateStack.cpp" />
@@ -178,6 +181,7 @@
     <ClInclude Include="Book\Label.hpp" />
     <ClInclude Include="Book\LoadingState.hpp" />
     <ClInclude Include="Book\MenuState.hpp" />
+    <ClInclude Include="Book\MusicPlayer.hpp" />
     <ClInclude Include="Book\ParallelTask.hpp" />
     <ClInclude Include="Book\Particle.hpp" />
     <ClInclude Include="Book\ParticleNode.hpp" />
@@ -190,6 +194,8 @@
     <ClInclude Include="Book\ResourceIdentifiers.hpp" />
     <ClInclude Include="Book\SceneNode.hpp" />
     <ClInclude Include="Book\SettingsState.hpp" />
+    <ClInclude Include="Book\SoundNode.hpp" />
+    <ClInclude Include="Book\SoundPlayer.hpp" />
     <ClInclude Include="Book\SpriteNode.hpp" />
     <ClInclude Include="Book\State.hpp" />
     <ClInclude Include="Book\StateIdentifiers.hpp" />

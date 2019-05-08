@@ -5,7 +5,7 @@
 #include "Book/TextNode.hpp"
 #include "Book/ParticleNode.hpp"
 #include "Book/SoundNode.hpp"
-#include "SFML/Graphics/RenderTarget.hpp"
+#include <SFML/Graphics/RenderTarget.hpp>
 
 #include <algorithm>
 #include <cmath>
