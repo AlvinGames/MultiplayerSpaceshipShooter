@@ -4,6 +4,7 @@
 #include "Book/Pickup.hpp"
 #include "Book/CommandQueue.hpp"
 #include "Book/SoundNode.hpp"
+#include "Book/NetworkNode.hpp"
 #include "Book/ResourceHolder.hpp"
 
 #include <SFML/Graphics/RenderTarget.hpp>
@@ -30,16 +31,17 @@ Aircraft::Aircraft(Type type, const TextureHolder& textures, const FontHolder& f
 , mIsFiring(false)
 , mIsLaunchingMissile(false)
 , mShowExplosion(true)
-, mPlayedExplosionSound(false)
+, mExplosionBegan(false)
 , mSpawnedPickup(false)
+, mPickupsEnabled(true)
 , mFireRateLevel(1)
 , mSpreadLevel(1)
 , mMissileAmmo(2)
 , mDropPickupCommand()
 , mTravelledDistance(0.f)
 , mDirectionIndex(0)
-, mHealthDisplay(nullptr)
 , mMissileDisplay(nullptr)
+, mIdentifier(0)
 {
 	mExplosion.setFrameSize(sf::Vector2i(256, 256));
 	mExplosion.setNumFrames(16);
@@ -81,12 +83,27 @@ Aircraft::Aircraft(Type type, const TextureHolder& textures, const FontHolder& f
 	updateTexts();
 }
 
+int Aircraft::getMissileAmmo() const
+{
+	return mMissileAmmo;
+}
+
+void Aircraft::setMissileAmmo(int ammo)
+{
+	mMissileAmmo = ammo;
+}
+
 void Aircraft::drawCurrent(sf::RenderTarget& target, sf::RenderStates states) const
 {
 	if (isDestroyed() && mShowExplosion)
 		target.draw(mExplosion, states);
 	else
 		target.draw(mSprite, states);
+}
+
+void Aircraft::disablePickups()
+{
+	mPickupsEnabled = false;
 }
 
 void Aircraft::updateCurrent(sf::Time dt, CommandQueue& commands)
@@ -102,12 +119,28 @@ void Aircraft::updateCurrent(sf::Time dt, CommandQueue& commands)
 		mExplosion.update(dt);
 
 		// Play explosion sound only once
-		if (!mPlayedExplosionSound)
+		if (!mExplosionBegan)
 		{
+			// Play sound effect
 			SoundEffect::ID soundEffect = (randomInt(2) == 0) ? SoundEffect::Explosion1 : SoundEffect::Explosion2;
 			playLocalSound(commands, soundEffect);
 
-			mPlayedExplosionSound = true;
+			// Emit network game action for enemy explosions
+			if (!isAllied())
+			{
+				sf::Vector2f position = getWorldPosition();
+
+				Command command;
+				command.category = Category::Network;
+				command.action = derivedAction<NetworkNode>([position] (NetworkNode& node, sf::Time)
+				{
+					node.notifyGameAction(GameActions::EnemyExplode, position);
+				});
+
+				commands.push(command);
+			}
+
+			mExplosionBegan = true;
 		}
 		return;
 	}
@@ -195,11 +228,21 @@ void Aircraft::playLocalSound(CommandQueue& commands, SoundEffect::ID effect)
 	command.category = Category::SoundEffect;
 	command.action = derivedAction<SoundNode>(
 		[effect, worldPosition](SoundNode& node, sf::Time)
-	{
-		node.playSound(effect, worldPosition);
-	});
+		{
+			node.playSound(effect, worldPosition); 
+		});
 
 	commands.push(command);
+}
+
+int	Aircraft::getIdentifier()
+{
+	return mIdentifier;
+}
+
+void Aircraft::setIdentifier(int identifier)
+{
+	mIdentifier = identifier;
 }
 
 void Aircraft::updateMovementPattern(sf::Time dt)
@@ -228,7 +271,9 @@ void Aircraft::updateMovementPattern(sf::Time dt)
 
 void Aircraft::checkPickupDrop(CommandQueue& commands)
 {
-	if (!isAllied() && randomInt(3) == 0 && !mSpawnedPickup)
+	// Drop pickup, if enemy airplane, with probability 1/3, if pickup not yet dropped
+	// and if not in network mode (where pickups are dropped via packets)
+	if (!isAllied() && randomInt(3) == 0 && !mSpawnedPickup && mPickupsEnabled)
 		commands.push(mDropPickupCommand);
 
 	mSpawnedPickup = true;
@@ -273,20 +318,20 @@ void Aircraft::createBullets(SceneNode& node, const TextureHolder& textures) con
 
 	switch (mSpreadLevel)
 	{
-	case 1:
-		createProjectile(node, type, 0.0f, 0.5f, textures);
-		break;
+		case 1:
+			createProjectile(node, type, 0.0f, 0.5f, textures);
+			break;
 
-	case 2:
-		createProjectile(node, type, -0.33f, 0.33f, textures);
-		createProjectile(node, type, +0.33f, 0.33f, textures);
-		break;
+		case 2:
+			createProjectile(node, type, -0.33f, 0.33f, textures);
+			createProjectile(node, type, +0.33f, 0.33f, textures);
+			break;
 
-	case 3:
-		createProjectile(node, type, -0.5f, 0.33f, textures);
-		createProjectile(node, type,  0.0f, 0.5f, textures);
-		createProjectile(node, type, +0.5f, 0.33f, textures);
-		break;
+		case 3:
+			createProjectile(node, type, -0.5f, 0.33f, textures);
+			createProjectile(node, type,  0.0f, 0.5f, textures);
+			createProjectile(node, type, +0.5f, 0.33f, textures);
+			break;
 	}
 }
 
