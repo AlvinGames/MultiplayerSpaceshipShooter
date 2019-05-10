@@ -21,7 +21,7 @@ public:
 
 private:
 	World				mWorld;
-	Player&				mPlayer;
+	Player				mPlayer;
 };
 
 #endif // BOOK_GAMESTATE_HPP
