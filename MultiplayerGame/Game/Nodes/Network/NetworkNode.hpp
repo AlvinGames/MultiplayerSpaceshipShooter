@@ -1,7 +1,9 @@
-#ifndef BOOK_NETWORKNODE_HPP
-#define BOOK_NETWORKNODE_HPP
+#pragma once
 
-#include "SceneNode.hpp"
+#ifndef NETWORKNODE_HPP
+#define NETWORKNODE_HPP
+
+#include "../SceneNode.hpp"
 #include "NetworkProtocol.hpp"
 
 #include <queue>
@@ -22,4 +24,4 @@ private:
 	std::queue<GameActions::Action>	mPendingActions;
 };
 
-#endif // BOOK_NETWORKNODE_HPP
+#endif // NETWORKNODE_HPP

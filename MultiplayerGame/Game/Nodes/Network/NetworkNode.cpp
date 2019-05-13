@@ -1,5 +1,5 @@
-#include "Book/NetworkNode.hpp"
-#include "Book/NetworkProtocol.hpp"
+#include "NetworkNode.hpp"
+#include "NetworkProtocol.hpp"
 
 
 NetworkNode::NetworkNode()
