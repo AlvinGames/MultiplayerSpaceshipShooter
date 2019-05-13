@@ -1,5 +1,7 @@
-#ifndef BOOK_ENTITY_HPP
-#define BOOK_ENTITY_HPP
+#pragma once
+
+#ifndef ENTITY_HPP
+#define ENTITY_HPP
 
 #include "SceneNode.hpp"
 
@@ -33,4 +35,4 @@ private:
 	int					mHitpoints;
 };
 
-#endif // BOOK_ENTITY_HPP
+#endif // ENTITY_HPP

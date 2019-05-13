@@ -1,8 +1,10 @@
-#ifndef BOOK_PROJECTILE_HPP
-#define BOOK_PROJECTILE_HPP
+#pragma once
 
-#include "Entity.hpp"
-#include "ResourceIdentifiers.hpp"
+#ifndef PROJECTILE_HPP
+#define PROJECTILE_HPP
+
+#include "../Entity.hpp"
+#include "../../../App/Resource.hpp"
 
 #include <SFML/Graphics/Sprite.hpp>
 
@@ -42,4 +44,4 @@ private:
 	sf::Vector2f			mTargetDirection;
 };
 
-#endif // BOOK_PROJECTILE_HPP
+#endif // PROJECTILE_HPP

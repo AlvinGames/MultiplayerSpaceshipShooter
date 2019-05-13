@@ -1,4 +1,4 @@
-#include "Book/Entity.hpp"
+#include "Entity.hpp"
 
 #include <cassert>
 

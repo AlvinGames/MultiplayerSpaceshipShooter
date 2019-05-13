@@ -1,11 +1,13 @@
-#ifndef BOOK_AIRCRAFT_HPP
-#define BOOK_AIRCRAFT_HPP
+#pragma once
 
-#include "Entity.hpp"
-#include "Command.hpp"
-#include "ResourceIdentifiers.hpp"
+#ifndef AIRCRAFT_HPP
+#define AIRCRAFT_HPP
+
+#include "../Entity.hpp"
+#include "../CommandControl.hpp"
+#include "../../../App/Resource.hpp"
 #include "Projectile.hpp"
-#include "TextNode.hpp"
+#include "../Graphics/TextNode.hpp"
 #include "Animation.hpp"
 
 #include <SFML/Graphics/Sprite.hpp>
@@ -89,4 +91,4 @@ private:
 	int						mIdentifier;
 };
 
-#endif // BOOK_AIRCRAFT_HPP
+#endif // AIRCRAFT_HPP

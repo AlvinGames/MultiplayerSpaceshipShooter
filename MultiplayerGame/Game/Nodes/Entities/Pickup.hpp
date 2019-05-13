@@ -1,9 +1,11 @@
-#ifndef BOOK_PICKUP_HPP
-#define BOOK_PICKUP_HPP
+#pragma once
 
-#include "Entity.hpp"
-#include "Command.hpp"
-#include "ResourceIdentifiers.hpp"
+#ifndef PICKUP_HPP
+#define PICKUP_HPP
+
+#include "../Entity.hpp"
+#include "../CommandControl.hpp"
+#include "../../../App/Resource.hpp"
 
 #include <SFML/Graphics/Sprite.hpp>
 
@@ -41,4 +43,4 @@ private:
 	sf::Sprite				mSprite;
 };
 
-#endif // BOOK_PICKUP_HPP
+#endif // PICKUP_HPP

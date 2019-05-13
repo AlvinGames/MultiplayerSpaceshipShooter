@@ -1,8 +1,7 @@
-#include "Book/Projectile.hpp"
-#include "Book/EmitterNode.hpp"
-#include "Book/DataTables.hpp"
-#include "Book/Utility.hpp"
-#include "Book/ResourceHolder.hpp"
+#include "Projectile.hpp"
+#include "../Graphics/EmitterNode.hpp"
+#include "DataTables.hpp"
+#include "../../../App/Util.hpp"
 
 #include <SFML/Graphics/RenderTarget.hpp>
 #include <SFML/Graphics/RenderStates.hpp>

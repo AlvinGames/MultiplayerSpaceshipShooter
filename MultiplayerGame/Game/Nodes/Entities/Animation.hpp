@@ -1,5 +1,7 @@
-#ifndef BOOK_ANIMATION_HPP
-#define BOOK_ANIMATION_HPP
+#pragma once
+
+#ifndef ANIMATION_HPP
+#define ANIMATION_HPP
 
 #include <SFML/Graphics/Sprite.hpp>
 #include <SFML/System/Time.hpp>
@@ -49,4 +51,4 @@ private:
 	bool 					mRepeat;
 };
 
-#endif // BOOK_ANIMATION_HPP
+#endif // ANIMATION_HPP

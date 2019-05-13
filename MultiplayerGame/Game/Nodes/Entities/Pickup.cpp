@@ -1,9 +1,7 @@
-#include "Book/Pickup.hpp"
-#include "Book/DataTables.hpp"
-#include "Book/Category.hpp"
-#include "Book/CommandQueue.hpp"
-#include "Book/Utility.hpp"
-#include "Book/ResourceHolder.hpp"
+#include "Pickup.hpp"
+#include "DataTables.hpp"
+#include "../Category.hpp"
+#include "../../../App/Util.hpp"
 
 #include <SFML/Graphics/RenderTarget.hpp>
 

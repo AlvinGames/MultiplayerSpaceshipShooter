@@ -1,7 +1,9 @@
-#ifndef BOOK_DATATABLES_HPP
-#define BOOK_DATATABLES_HPP
+#pragma once
 
-#include "ResourceIdentifiers.hpp"
+#ifndef DATATABLES_HPP
+#define DATATABLES_HPP
+
+#include "../../../App/Resource.hpp"
 
 #include <SFML/System/Time.hpp>
 #include <SFML/Graphics/Color.hpp>
@@ -63,4 +65,4 @@ std::vector<ProjectileData>	initializeProjectileData();
 std::vector<PickupData>		initializePickupData();
 std::vector<ParticleData>	initializeParticleData();
 
-#endif // BOOK_DATATABLES_HPP
+#endif // DATATABLES_HPP

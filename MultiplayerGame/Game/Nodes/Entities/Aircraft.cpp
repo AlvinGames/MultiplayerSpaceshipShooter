@@ -1,11 +1,9 @@
-#include "Book/Aircraft.hpp"
-#include "Book/DataTables.hpp"
-#include "Book/Utility.hpp"
-#include "Book/Pickup.hpp"
-#include "Book/CommandQueue.hpp"
-#include "Book/SoundNode.hpp"
-#include "Book/NetworkNode.hpp"
-#include "Book/ResourceHolder.hpp"
+#include "Aircraft.hpp"
+#include "DataTables.hpp"
+#include "../../../App/Util.hpp"
+#include "Pickup.hpp"
+#include "../Audio.hpp"
+#include "../Network/NetworkNode.hpp"
 
 #include <SFML/Graphics/RenderTarget.hpp>
 #include <SFML/Graphics/RenderStates.hpp>
