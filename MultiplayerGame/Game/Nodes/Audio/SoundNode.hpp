@@ -1,8 +1,10 @@
-#ifndef BOOK_SOUNDNODE_HPP
-#define BOOK_SOUNDNODE_HPP
+#pragma once
 
-#include "SceneNode.hpp"
-#include "ResourceIdentifiers.hpp"
+#ifndef SOUNDNODE_HPP
+#define SOUNDNODE_HPP
+
+#include "../SceneNode.hpp"
+#include "../../../App/Resource.hpp"
 
 
 class SoundPlayer;
@@ -20,4 +22,4 @@ private:
 	SoundPlayer&			mSounds;
 };
 
-#endif // BOOK_SOUNDNODE_HPP
+#endif // SOUNDNODE_HPP

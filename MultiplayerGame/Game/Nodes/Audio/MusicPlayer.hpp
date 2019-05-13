@@ -1,8 +1,9 @@
-#ifndef BOOK_MUSICPLAYER_HPP
-#define BOOK_MUSICPLAYER_HPP
+#pragma once
 
-#include "ResourceHolder.hpp"
-#include "ResourceIdentifiers.hpp"
+#ifndef MUSICPLAYER_HPP
+#define MUSICPLAYER_HPP
+
+#include "../../../App/Resource.hpp"
 
 #include <SFML/System/NonCopyable.hpp>
 #include <SFML/Audio/Music.hpp>
@@ -29,4 +30,4 @@ private:
 	float								mVolume;
 };
 
-#endif // BOOK_MUSICPLAYER_HPP
+#endif // MUSICPLAYER_HPP

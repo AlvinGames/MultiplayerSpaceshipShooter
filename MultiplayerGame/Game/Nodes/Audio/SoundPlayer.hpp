@@ -1,8 +1,9 @@
-#ifndef BOOK_SOUNDPLAYER_HPP
-#define BOOK_SOUNDPLAYER_HPP
+#pragma once
 
-#include "ResourceHolder.hpp"
-#include "ResourceIdentifiers.hpp"
+#ifndef SOUNDPLAYER_HPP
+#define SOUNDPLAYER_HPP
+
+#include "../../../App/Resource.hpp"
 
 #include <SFML/System/Vector2.hpp>
 #include <SFML/System/NonCopyable.hpp>
@@ -30,4 +31,4 @@ private:
 	std::list<sf::Sound>		mSounds;
 };
 
-#endif // BOOK_SOUNDPLAYER_HPP
+#endif // SOUNDPLAYER_HPP
