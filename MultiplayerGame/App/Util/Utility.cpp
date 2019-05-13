@@ -1,5 +1,5 @@
-#include "Book/Utility.hpp"
-#include "Book/Animation.hpp"
+#include "Utility.hpp"
+#include "../../Game/Nodes/Entities/Animation.hpp"
 
 #include <SFML/Graphics/Sprite.hpp>
 #include <SFML/Graphics/Text.hpp>

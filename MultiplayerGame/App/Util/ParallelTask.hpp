@@ -1,5 +1,7 @@
-#ifndef BOOK_PARALLELTASK_HPP
-#define BOOK_PARALLELTASK_HPP
+#pragma once
+
+#ifndef PARALLELTASK_HPP
+#define PARALLELTASK_HPP
 
 #include <SFML/System/Thread.hpp>
 #include <SFML/System/Mutex.hpp>
@@ -25,4 +27,4 @@ class ParallelTask
 		sf::Mutex			mMutex;
 };
 
-#endif // BOOK_PARALLELTASK_HPP
+#endif // PARALLELTASK_HPP

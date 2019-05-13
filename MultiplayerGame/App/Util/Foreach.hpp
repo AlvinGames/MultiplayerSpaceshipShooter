@@ -1,5 +1,7 @@
-#ifndef BOOK_FOREACH_HPP
-#define BOOK_FOREACH_HPP
+#pragma once
+
+#ifndef FOREACH_HPP
+#define FOREACH_HPP
 
 // Preprocessor trick to allow nested loops
 #define BOOK_PP_CAT_IMPL(a, b) a ## b
@@ -23,4 +25,4 @@
 	if (BOOK_LINE_ID(broken) = true, false) {} else																								\
 	for (declaration = *BOOK_LINE_ID(itr); !BOOK_LINE_ID(passed); BOOK_LINE_ID(passed) = true, BOOK_LINE_ID(broken) = false)
 
-#endif // BOOK_FOREACH_HPP
+#endif // FOREACH_HPP

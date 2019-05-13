@@ -1,5 +1,7 @@
-#ifndef BOOK_UTILITY_HPP
-#define BOOK_UTILITY_HPP
+#pragma once
+
+#ifndef UTILITY_HPP
+#define UTILITY_HPP
 
 #include <SFML/Window/Keyboard.hpp>
 #include <SFML/System/Vector2.hpp>
@@ -40,5 +42,5 @@ float			length(sf::Vector2f vector);
 sf::Vector2f	unitVector(sf::Vector2f vector);
 
 
-#include "Book/Utility.inl"
-#endif // BOOK_UTILITY_HPP
+#include "Utility.inl"
+#endif // UTILITY_HPP
