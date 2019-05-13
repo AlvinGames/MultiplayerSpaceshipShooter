@@ -1,9 +1,10 @@
-#ifndef BOOK_LABEL_HPP
-#define BOOK_LABEL_HPP
+#pragma once
+
+#ifndef LABEL_HPP
+#define LABEL_HPP
 
 #include "Component.hpp"
-#include "ResourceIdentifiers.hpp"
-#include "ResourceHolder.hpp"
+#include "../../App/Resource.hpp"
 
 #include <SFML/Graphics/Text.hpp>
 
@@ -36,4 +37,4 @@ namespace GUI
 
 }
 
-#endif // BOOK_LABEL_HPP
+#endif // LABEL_HPP

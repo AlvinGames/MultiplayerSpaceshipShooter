@@ -1,5 +1,7 @@
-#ifndef BOOK_COMPONENT_HPP
-#define BOOK_COMPONENT_HPP
+#pragma once
+
+#ifndef COMPONENT_HPP
+#define COMPONENT_HPP
 
 #include <SFML/System/NonCopyable.hpp>
 #include <SFML/Graphics/Drawable.hpp>
@@ -45,4 +47,4 @@ namespace GUI
 
 }
 
-#endif // BOOK_COMPONENT_HPP
+#endif // COMPONENT_HPP

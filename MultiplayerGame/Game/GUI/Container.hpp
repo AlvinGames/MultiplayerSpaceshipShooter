@@ -1,5 +1,7 @@
-#ifndef BOOK_CONTAINER_HPP
-#define BOOK_CONTAINER_HPP
+#pragma once
+
+#ifndef CONTAINER_HPP
+#define CONTAINER_HPP
 
 #include "Component.hpp"
 
@@ -41,4 +43,4 @@ namespace GUI
 
 }
 
-#endif // BOOK_CONTAINER_HPP
+#endif // CONTAINER_HPP

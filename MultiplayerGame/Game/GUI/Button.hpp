@@ -1,11 +1,11 @@
+#pragma once
 
-#ifndef BOOK_BUTTON_HPP
-#define BOOK_BUTTON_HPP
+#ifndef BUTTON_HPP
+#define BUTTON_HPP
 
 #include "Component.hpp"
-#include "ResourceIdentifiers.hpp"
-#include "State.hpp"
-#include "ResourceHolder.hpp"
+#include "../../App/Resource.hpp"
+#include "../StateMachine/State.hpp"
 
 #include <SFML/Graphics/Sprite.hpp>
 #include <SFML/Graphics/Text.hpp>
@@ -68,4 +68,4 @@ namespace GUI
 
 }
 
-#endif // BOOK_BUTTON_HPP
+#endif // BUTTON_HPP

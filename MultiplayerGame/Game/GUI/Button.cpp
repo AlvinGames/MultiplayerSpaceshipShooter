@@ -1,7 +1,7 @@
-#include "Book/Button.hpp"
-#include "Book/Utility.hpp"
-#include "Book/SoundPlayer.hpp"
-#include "Book/ResourceHolder.hpp"
+#include "Button.hpp"
+#include "../../App/Util.hpp"
+#include "../Nodes/Audio.hpp"
+#include "../../App/Resource.hpp"
 
 #include <SFML/Window/Event.hpp>
 #include <SFML/Graphics/RenderStates.hpp>
@@ -12,11 +12,11 @@ namespace GUI
 {
 
 	Button::Button(State::Context context)
-		: mCallback()
-		, mSprite(context.textures->get(Textures::Buttons))
-		, mText("", context.fonts->get(Fonts::Main), 16)
-		, mIsToggle(false)
-		, mSounds(*context.sounds)
+	: mCallback()
+	, mSprite(context.textures->get(Textures::Buttons))
+	, mText("", context.fonts->get(Fonts::Main), 16)
+	, mIsToggle(false)
+	, mSounds(*context.sounds)
 	{
 		changeTexture(Normal);
 

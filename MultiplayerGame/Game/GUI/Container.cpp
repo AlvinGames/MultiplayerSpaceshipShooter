@@ -1,5 +1,4 @@
-#include "Book/Container.hpp"
-#include "Book/Foreach.hpp"
+#include "Container.hpp"
 
 #include <SFML/Window/Event.hpp>
 #include <SFML/Graphics/RenderStates.hpp>
@@ -10,8 +9,8 @@ namespace GUI
 {
 
 	Container::Container()
-		: mChildren()
-		, mSelectedChild(-1)
+	: mChildren()
+	, mSelectedChild(-1)
 	{
 	}
 
@@ -57,7 +56,7 @@ namespace GUI
 	{
 		states.transform *= getTransform();
 
-		FOREACH(const Component::Ptr& child, mChildren)
+		for (const Component::Ptr& child : mChildren)
 			target.draw(*child, states);
 	}
 
