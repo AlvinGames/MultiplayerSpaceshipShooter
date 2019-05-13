@@ -4,6 +4,7 @@
 #include "Book/StateIdentifiers.hpp"
 #include "Book/TitleState.hpp"
 #include "Book/GameState.hpp"
+#include "Book/MultiplayerGameState.hpp"
 #include "Book/MenuState.hpp"
 #include "Book/PauseState.hpp"
 #include "Book/SettingsState.hpp"
@@ -13,13 +14,14 @@
 const sf::Time Application::TimePerFrame = sf::seconds(1.f / 60.f);
 
 Application::Application()
-: mWindow(sf::VideoMode(1024, 768), "Audio", sf::Style::Close)
+: mWindow(sf::VideoMode(1024, 768), "War Planes", sf::Style::Close)
 , mTextures()
 , mFonts()
-, mPlayer()
 , mMusic()
 , mSounds()
-, mStateStack(State::Context(mWindow, mTextures, mFonts, mPlayer, mMusic, mSounds))
+, mKeyBinding1(1)
+, mKeyBinding2(2)
+, mStateStack(State::Context(mWindow, mTextures, mFonts, mMusic, mSounds, mKeyBinding1, mKeyBinding2))
 , mStatisticsText()
 , mStatisticsUpdateTime()
 , mStatisticsNumFrames(0)
@@ -27,10 +29,10 @@ Application::Application()
 	mWindow.setKeyRepeatEnabled(false);
 	mWindow.setVerticalSyncEnabled(true);
 
-	mFonts.load(Fonts::Main, 	"Media/Sansation.ttf");
+	mFonts.load(Fonts::Main, "Media/Sansation.ttf");
 
-	mTextures.load(Textures::TitleScreen,	"Media/Textures/TitleScreen.png");
-	mTextures.load(Textures::Buttons,		"Media/Textures/Buttons.png");
+	mTextures.load(Textures::TitleScreen, "Media/Textures/TitleScreen.png");
+	mTextures.load(Textures::Buttons, "Media/Textures/Buttons.png");
 
 	mStatisticsText.setFont(mFonts.get(Fonts::Main));
 	mStatisticsText.setPosition(5.f, 5.f);
@@ -119,7 +121,11 @@ void Application::registerStates()
 	mStateStack.registerState<TitleState>(States::Title);
 	mStateStack.registerState<MenuState>(States::Menu);
 	mStateStack.registerState<GameState>(States::Game);
+	mStateStack.registerState<MultiplayerGameState>(States::HostGame, true);
+	mStateStack.registerState<MultiplayerGameState>(States::JoinGame, false);
 	mStateStack.registerState<PauseState>(States::Pause);
+	mStateStack.registerState<PauseState>(States::NetworkPause, true);
 	mStateStack.registerState<SettingsState>(States::Settings);
-	mStateStack.registerState<GameOverState>(States::GameOver);
+	mStateStack.registerState<GameOverState>(States::GameOver, "Mission Failed!");
+	mStateStack.registerState<GameOverState>(States::MissionSuccess, "Mission Successful!");
 }

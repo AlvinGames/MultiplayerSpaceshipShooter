@@ -9,17 +9,17 @@
 
 class NetworkNode : public SceneNode
 {
-	public:
-								NetworkNode();
+public:
+	NetworkNode();
 
-		void					notifyGameAction(GameActions::Type type, sf::Vector2f position);
-		bool					pollGameAction(GameActions::Action& out);
+	void					notifyGameAction(GameActions::Type type, sf::Vector2f position);
+	bool					pollGameAction(GameActions::Action& out);
 
-		virtual unsigned int	getCategory() const;
+	virtual unsigned int	getCategory() const;
 
 
-	private:
-		std::queue<GameActions::Action>	mPendingActions;
+private:
+	std::queue<GameActions::Action>	mPendingActions;
 };
 
 #endif // BOOK_NETWORKNODE_HPP

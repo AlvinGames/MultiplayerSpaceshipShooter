@@ -4,8 +4,8 @@ namespace GUI
 {
 
 	Component::Component()
-		: mIsSelected(false)
-		, mIsActive(false)
+	: mIsSelected(false)
+	, mIsActive(false)
 	{
 	}
 
