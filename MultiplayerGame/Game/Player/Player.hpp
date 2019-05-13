@@ -1,7 +1,9 @@
-#ifndef BOOK_PLAYER_HPP
-#define BOOK_PLAYER_HPP
+#pragma once
 
-#include "Command.hpp"
+#ifndef PLAYER_HPP
+#define PLAYER_HPP
+
+#include "../Nodes/CommandControl.hpp"
 #include "KeyBinding.hpp"
 
 #include <SFML/System/NonCopyable.hpp>
@@ -57,4 +59,4 @@ private:
 	sf::TcpSocket*				mSocket;
 };
 
-#endif // BOOK_PLAYER_HPP
+#endif // PLAYER_HPP
