@@ -1,7 +1,9 @@
-#ifndef BOOK_COMMAND_HPP
-#define BOOK_COMMAND_HPP
+#pragma once
 
-#include "Category.hpp"
+#ifndef COMMAND_HPP
+#define COMMAND_HPP
+
+#include "../Category.hpp"
 
 #include <SFML/System/Time.hpp>
 
@@ -15,7 +17,7 @@ struct Command
 {
 	typedef std::function<void(SceneNode&, sf::Time)> Action;
 
-								Command();
+	Command();
 
 	Action						action;
 	unsigned int				category;
@@ -24,7 +26,7 @@ struct Command
 template <typename GameObject, typename Function>
 Command::Action derivedAction(Function fn)
 {
-	return [=] (SceneNode& node, sf::Time dt)
+	return [=](SceneNode& node, sf::Time dt)
 	{
 		// Check if cast is safe
 		assert(dynamic_cast<GameObject*>(&node) != nullptr);
@@ -34,4 +36,4 @@ Command::Action derivedAction(Function fn)
 	};
 }
 
-#endif // BOOK_COMMAND_HPP
+#endif // COMMAND_HPP
