@@ -1,9 +1,10 @@
-#ifndef BOOK_BLOOMEFFECT_HPP
-#define BOOK_BLOOMEFFECT_HPP
+#pragma once
+
+#ifndef BLOOMEFFECT_HPP
+#define BLOOMEFFECT_HPP
 
 #include "PostEffect.hpp"
-#include "ResourceIdentifiers.hpp"
-#include "ResourceHolder.hpp"
+#include "../../../App/Resource.hpp"
 
 #include <SFML/Graphics/RenderTexture.hpp>
 #include <SFML/Graphics/Shader.hpp>
@@ -41,4 +42,4 @@ private:
 	RenderTextureArray	mSecondPassTextures;
 };
 
-#endif // BOOK_BLOOMEFFECT_HPP
+#endif // BLOOMEFFECT_HPP

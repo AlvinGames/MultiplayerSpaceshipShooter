@@ -1,7 +1,9 @@
-#ifndef BOOK_SPRITENODE_HPP
-#define BOOK_SPRITENODE_HPP
+#pragma once
 
-#include "SceneNode.hpp"
+#ifndef SPRITENODE_HPP
+#define SPRITENODE_HPP
+
+#include "../SceneNode.hpp"
 
 #include <SFML/Graphics/Sprite.hpp>
 
@@ -21,4 +23,4 @@ private:
 	sf::Sprite			mSprite;
 };
 
-#endif // BOOK_SPRITENODE_HPP
+#endif // SPRITENODE_HPP

@@ -1,8 +1,10 @@
-#ifndef BOOK_PARTICLENODE_HPP
-#define BOOK_PARTICLENODE_HPP
+#pragma once
 
-#include "SceneNode.hpp"
-#include "ResourceIdentifiers.hpp"
+#ifndef PARTICLENODE_HPP
+#define PARTICLENODE_HPP
+
+#include "../SceneNode.hpp"
+#include "../../../App/Resource.hpp"
 #include "Particle.hpp"
 
 #include <SFML/Graphics/VertexArray.hpp>
@@ -37,4 +39,4 @@ private:
 	mutable bool			mNeedsVertexUpdate;
 };
 
-#endif // BOOK_PARTICLENODE_HPP
+#endif // PARTICLENODE_HPP

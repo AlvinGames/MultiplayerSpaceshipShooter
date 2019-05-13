@@ -1,7 +1,9 @@
-#ifndef BOOK_EMITTERNODE_HPP
-#define BOOK_EMITTERNODE_HPP
+#pragma once
 
-#include "SceneNode.hpp"
+#ifndef EMITTERNODE_HPP
+#define EMITTERNODE_HPP
+
+#include "../SceneNode.hpp"
 #include "Particle.hpp"
 
 
@@ -25,4 +27,4 @@ private:
 	ParticleNode*			mParticleSystem;
 };
 
-#endif // BOOK_EMITTERNODE_HPP
+#endif // EMITTERNODE_HPP

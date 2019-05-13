@@ -1,7 +1,5 @@
-#include "Book/ParticleNode.hpp"
-#include "Book/Foreach.hpp"
-#include "Book/DataTables.hpp"
-#include "Book/ResourceHolder.hpp"
+#include "ParticleNode.hpp"
+#include "../Entities/DataTables.hpp"
 
 #include <SFML/Graphics/RenderTarget.hpp>
 #include <SFML/Graphics/Texture.hpp>
@@ -51,7 +49,7 @@ void ParticleNode::updateCurrent(sf::Time dt, CommandQueue&)
 		mParticles.pop_front();
 
 	// Decrease lifetime of existing particles
-	FOREACH(Particle& particle, mParticles)
+	for (Particle& particle : mParticles)
 		particle.lifetime -= dt;
 
 	mNeedsVertexUpdate = true;
@@ -89,7 +87,7 @@ void ParticleNode::computeVertices() const
 
 	// Refill vertex array
 	mVertexArray.clear();
-	FOREACH(const Particle& particle, mParticles)
+	for (const Particle& particle : mParticles)
 	{
 		sf::Vector2f pos = particle.position;
 		sf::Color color = particle.color;

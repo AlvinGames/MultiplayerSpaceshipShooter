@@ -1,9 +1,10 @@
-#ifndef BOOK_TEXTNODE_HPP
-#define BOOK_TEXTNODE_HPP
+#pragma once
 
-#include "ResourceHolder.hpp"
-#include "ResourceIdentifiers.hpp"
-#include "SceneNode.hpp"
+#ifndef TEXTNODE_HPP
+#define TEXTNODE_HPP
+
+#include "../../../App/Resource.hpp"
+#include "../SceneNode.hpp"
 
 #include <SFML/Graphics/Text.hpp>
 #include <SFML/Graphics/Font.hpp>
@@ -25,4 +26,4 @@ private:
 	sf::Text			mText;
 };
 
-#endif // BOOK_TEXTNODE_HPP
+#endif // TEXTNODE_HPP
