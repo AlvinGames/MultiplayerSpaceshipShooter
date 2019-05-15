@@ -1,12 +1,13 @@
-#include "Book/World.hpp"
-#include "Book/Projectile.hpp"
-#include "Book/Pickup.hpp"
-#include "Book/Foreach.hpp"
-#include "Book/TextNode.hpp"
-#include "Book/ParticleNode.hpp"
-#include "Book/SoundNode.hpp"
-#include "Book/NetworkNode.hpp"
-#include "Book/Utility.hpp"
+#include "World.hpp"
+
+#include "Nodes/Entities/Projectile.hpp"
+#include "Nodes/Entities/Pickup.hpp"
+#include "Nodes/Graphics.hpp"
+#include "Nodes/Audio.hpp"
+#include "Nodes/Network.hpp"
+
+#include "../App/Util.hpp"
+
 #include <SFML/Graphics/RenderTarget.hpp>
 
 #include <algorithm>
@@ -53,7 +54,7 @@ void World::update(sf::Time dt)
 	// Scroll the world, reset player velocity
 	mWorldView.move(0.f, mScrollSpeed * dt.asSeconds() * mScrollSpeedCompensation);	
 
-	FOREACH(Aircraft* a, mPlayerAircrafts)
+	for (Aircraft* a : mPlayerAircrafts)
 		a->setVelocity(0.f, 0.f);
 
 	// Setup commands to destroy entities, and guide missiles
@@ -108,7 +109,7 @@ CommandQueue& World::getCommandQueue()
 
 Aircraft* World::getAircraft(int identifier) const
 {
-	FOREACH(Aircraft* a, mPlayerAircrafts)
+	for (Aircraft* a : mPlayerAircrafts)
 	{
 		if (a->getIdentifier() == identifier)
 			return a;
@@ -190,7 +191,7 @@ void World::adaptPlayerPosition()
 	sf::FloatRect viewBounds = getViewBounds();
 	const float borderDistance = 40.f;
 
-	FOREACH(Aircraft* aircraft, mPlayerAircrafts)
+	for (Aircraft* aircraft : mPlayerAircrafts)
 	{
 		sf::Vector2f position = aircraft->getPosition();
 		position.x = std::max(position.x, viewBounds.left + borderDistance);
@@ -203,7 +204,7 @@ void World::adaptPlayerPosition()
 
 void World::adaptPlayerVelocity()
 {
-	FOREACH(Aircraft* aircraft, mPlayerAircrafts)
+	for (Aircraft* aircraft : mPlayerAircrafts)
 	{
 		sf::Vector2f velocity = aircraft->getVelocity();
 
@@ -242,7 +243,7 @@ void World::handleCollisions()
 	std::set<SceneNode::Pair> collisionPairs;
 	mSceneGraph.checkSceneCollision(mSceneGraph, collisionPairs);
 
-	FOREACH(SceneNode::Pair pair, collisionPairs)
+	for (SceneNode::Pair pair : collisionPairs)
 	{
 		if (matchesCategories(pair, Category::PlayerAircraft, Category::EnemyAircraft))
 		{
@@ -291,7 +292,7 @@ void World::updateSounds()
 	// 1 or more players -> mean position between all aircrafts
 	else
 	{
-		FOREACH(Aircraft* aircraft, mPlayerAircrafts)
+		for (Aircraft* aircraft : mPlayerAircrafts)
 			listenerPosition += aircraft->getWorldPosition();
 
 		listenerPosition /= static_cast<float>(mPlayerAircrafts.size());
@@ -468,7 +469,7 @@ void World::guideMissiles()
 		Aircraft* closestEnemy = nullptr;
 
 		// Find closest enemy
-		FOREACH(Aircraft* enemy, mActiveEnemies)
+		for (Aircraft* enemy : mActiveEnemies)
 		{
 			float enemyDistance = distance(missile, *enemy);
 

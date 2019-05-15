@@ -1,17 +1,18 @@
-#ifndef BOOK_WORLD_HPP
-#define BOOK_WORLD_HPP
+#pragma once
 
-#include "ResourceHolder.hpp"
-#include "ResourceIdentifiers.hpp"
-#include "SceneNode.hpp"
-#include "SpriteNode.hpp"
-#include "Aircraft.hpp"
-#include "CommandQueue.hpp"
-#include "Command.hpp"
-#include "Pickup.hpp"
-#include "BloomEffect.hpp"
-#include "SoundPlayer.hpp"
-#include "NetworkProtocol.hpp"
+#ifndef WORLD_HPP
+#define WORLD_HPP
+
+#include "../App/Resource.hpp"
+
+#include "Nodes/CommandControl.hpp"
+#include "Nodes/Network/NetworkProtocol.hpp"
+#include "Nodes/SceneNode.hpp"
+#include "Nodes/Audio.hpp"
+#include "Nodes/Graphics.hpp"
+
+#include "Nodes/Entities/Aircraft.hpp"
+#include "Nodes/Entities/Pickup.hpp"
 
 #include <SFML/System/NonCopyable.hpp>
 #include <SFML/Graphics/View.hpp>
@@ -124,4 +125,4 @@ private:
 	SpriteNode*							mFinishSprite;
 };
 
-#endif // BOOK_WORLD_HPP
+#endif // WORLD_HPP
