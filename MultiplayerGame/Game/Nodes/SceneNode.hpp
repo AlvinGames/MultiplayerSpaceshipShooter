@@ -1,5 +1,7 @@
-#ifndef BOOK_SCENENODE_HPP
-#define BOOK_SCENENODE_HPP
+#pragma once
+
+#ifndef SCENENODE_HPP
+#define SCENENODE_HPP
 
 #include "Category.hpp"
 
@@ -65,4 +67,4 @@ private:
 bool	collision(const SceneNode& lhs, const SceneNode& rhs);
 float	distance(const SceneNode& lhs, const SceneNode& rhs);
 
-#endif // BOOK_SCENENODE_HPP
+#endif // SCENENODE_HPP

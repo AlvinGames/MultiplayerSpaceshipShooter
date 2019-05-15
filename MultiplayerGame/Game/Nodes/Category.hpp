@@ -1,5 +1,7 @@
-#ifndef BOOK_CATEGORY_HPP
-#define BOOK_CATEGORY_HPP
+#pragma once
+
+#ifndef CATEGORY_HPP
+#define CATEGORY_HPP
 
 
 // Entity/scene node category, used to dispatch commands
@@ -24,4 +26,4 @@ namespace Category
 	};
 }
 
-#endif // BOOK_CATEGORY_HPP
+#endif // CATEGORY_HPP
