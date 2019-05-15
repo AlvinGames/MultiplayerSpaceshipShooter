@@ -1,12 +1,12 @@
-#ifndef BOOK_APPLICATION_HPP
-#define BOOK_APPLICATION_HPP
+#pragma once
 
-#include "Book/ResourceHolder.hpp"
-#include "Book/ResourceIdentifiers.hpp"
-#include "Book/Player.hpp"
-#include "Book/StateStack.hpp"
-#include "Book/MusicPlayer.hpp"
-#include "Book/SoundPlayer.hpp"
+#ifndef APPLICATION_HPP
+#define APPLICATION_HPP
+
+#include "Resource.hpp"
+#include "../Game/Player/Player.hpp"
+#include "../Game/StateMachine/StateStack.hpp"
+#include "../Game/Nodes/Audio.hpp"
 
 #include <SFML/System/Time.hpp>
 #include <SFML/Graphics/RenderWindow.hpp>
@@ -47,4 +47,4 @@ class Application
 		std::size_t				mStatisticsNumFrames;
 };
 
-#endif // BOOK_APPLICATION_HPP
+#endif // APPLICATION_HPP

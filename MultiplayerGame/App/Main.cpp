@@ -1,5 +1,5 @@
 #include "config.hpp"
-#include "Book/Application.hpp"
+#include "Application.hpp"
 
 #include <stdexcept>
 #include <iostream>

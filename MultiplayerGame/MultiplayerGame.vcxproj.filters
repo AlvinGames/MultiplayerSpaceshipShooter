@@ -15,281 +15,305 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Main.cpp">
+    <ClCompile Include="Game\World.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SceneNode.cpp">
+    <ClCompile Include="Game\Player\KeyBinding.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SpriteNode.cpp">
+    <ClCompile Include="Game\Player\Player.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Entity.cpp">
+    <ClCompile Include="App\Application.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Aircraft.cpp">
+    <ClCompile Include="App\Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="World.cpp">
+    <ClCompile Include="Game\Nodes\Audio\MusicPlayer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Command.cpp">
+    <ClCompile Include="Game\Nodes\Audio\SoundNode.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="CommandQueue.cpp">
+    <ClCompile Include="Game\Nodes\Audio\SoundPlayer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Player.cpp">
+    <ClCompile Include="Game\Nodes\Commands\Command.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Utility.cpp">
+    <ClCompile Include="Game\Nodes\Commands\CommandQueue.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="State.cpp">
+    <ClCompile Include="Game\Nodes\Entities\Aircraft.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="StateStack.cpp">
+    <ClCompile Include="Game\Nodes\Entities\DataTables.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ParallelTask.cpp">
+    <ClCompile Include="Game\Nodes\Entities\Pickup.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="LoadingState.cpp">
+    <ClCompile Include="Game\Nodes\Entities\Projectile.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GameState.cpp">
+    <ClCompile Include="Game\Nodes\Graphics\BloomEffect.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="PauseState.cpp">
+    <ClCompile Include="Game\Nodes\Graphics\EmitterNode.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MenuState.cpp">
+    <ClCompile Include="Game\Nodes\Graphics\ParticleNode.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="TitleState.cpp">
+    <ClCompile Include="Game\Nodes\Graphics\PostEffect.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Application.cpp">
+    <ClCompile Include="Game\Nodes\Network\NetworkNode.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Component.cpp">
+    <ClCompile Include="Game\Nodes\Entity.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Container.cpp">
+    <ClCompile Include="Game\Nodes\SceneNode.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Button.cpp">
+    <ClCompile Include="App\Util\Utility.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Label.cpp">
+    <ClCompile Include="Game\Nodes\Network\GameServer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SettingsState.cpp">
+    <ClCompile Include="App\Util\ParallelTask.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="TextNode.cpp">
+    <ClCompile Include="Game\Nodes\Entities\Animation.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Projectile.cpp">
+    <ClCompile Include="Game\GUI\Button.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="DataTables.cpp">
+    <ClCompile Include="Game\GUI\Component.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Pickup.cpp">
+    <ClCompile Include="Game\GUI\Container.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GameOverState.cpp">
+    <ClCompile Include="Game\GUI\Label.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Animation.cpp">
+    <ClCompile Include="Game\StateMachine\States\GameOverState.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ParticleNode.cpp">
+    <ClCompile Include="Game\StateMachine\States\GameState.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="EmitterNode.cpp">
+    <ClCompile Include="Game\StateMachine\States\LoadingState.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="BloomEffect.cpp">
+    <ClCompile Include="Game\StateMachine\States\MenuState.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="PostEffect.cpp">
+    <ClCompile Include="Game\StateMachine\States\MultiplayerGameState.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MusicPlayer.cpp">
+    <ClCompile Include="Game\StateMachine\States\PauseState.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SoundNode.cpp">
+    <ClCompile Include="Game\StateMachine\States\SettingsState.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="SoundPlayer.cpp">
+    <ClCompile Include="Game\StateMachine\States\TitleState.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="KeyBinding.cpp">
+    <ClCompile Include="Game\StateMachine\State.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="NetworkNode.cpp">
+    <ClCompile Include="Game\StateMachine\StateStack.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GameServer.cpp">
+    <ClCompile Include="Game\Nodes\Graphics\TextNode.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MultiplayerGameState.cpp">
+    <ClCompile Include="Game\Nodes\Graphics\SpriteNode.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="config.hpp">
+    <ClInclude Include="Game\World.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Book\ResourceHolder.hpp">
+    <ClInclude Include="Game\Player\KeyBinding.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Book\Foreach.hpp">
+    <ClInclude Include="Game\Player\Player.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Book\SceneNode.hpp">
+    <ClInclude Include="App\Application.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Book\SpriteNode.hpp">
+    <ClInclude Include="App\config.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Book\Entity.hpp">
+    <ClInclude Include="Game\Nodes\Audio\MusicPlayer.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Book\ResourceIdentifiers.hpp">
+    <ClInclude Include="Game\Nodes\Audio\SoundNode.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Book\Aircraft.hpp">
+    <ClInclude Include="Game\Nodes\Audio\SoundPlayer.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Book\World.hpp">
+    <ClInclude Include="Game\Nodes\Commands\Command.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Book\Category.hpp">
+    <ClInclude Include="Game\Nodes\Commands\CommandQueue.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Book\Command.hpp">
+    <ClInclude Include="Game\Nodes\Entities\Aircraft.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Book\CommandQueue.hpp">
+    <ClInclude Include="Game\Nodes\Entities\DataTables.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Book\Player.hpp">
+    <ClInclude Include="Game\Nodes\Entities\Pickup.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Book\Utility.hpp">
+    <ClInclude Include="Game\Nodes\Entities\Projectile.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Book\StateIdentifiers.hpp">
+    <ClInclude Include="Game\Nodes\Graphics\BloomEffect.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Book\State.hpp">
+    <ClInclude Include="Game\Nodes\Graphics\EmitterNode.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Book\StateStack.hpp">
+    <ClInclude Include="Game\Nodes\Graphics\Particle.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Book\ParallelTask.hpp">
+    <ClInclude Include="Game\Nodes\Graphics\ParticleNode.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Book\LoadingState.hpp">
+    <ClInclude Include="Game\Nodes\Graphics\PostEffect.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Book\GameState.hpp">
+    <ClInclude Include="Game\Nodes\Network\NetworkNode.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Book\PauseState.hpp">
+    <ClInclude Include="Game\Nodes\Network\NetworkProtocol.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Book\MenuState.hpp">
+    <ClInclude Include="Game\Nodes\Category.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Book\TitleState.hpp">
+    <ClInclude Include="Game\Nodes\Entity.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Book\Application.hpp">
+    <ClInclude Include="Game\Nodes\SceneNode.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Book\Component.hpp">
+    <ClInclude Include="App\Util\Foreach.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Book\Container.hpp">
+    <ClInclude Include="App\Util\Utility.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Book\Button.hpp">
+    <ClInclude Include="Game\Nodes\Network\GameServer.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Book\Label.hpp">
+    <ClInclude Include="App\Util\ParallelTask.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Book\SettingsState.hpp">
+    <ClInclude Include="Game\Nodes\Entities\Animation.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Book\TextNode.hpp">
+    <ClInclude Include="App\Resource\ResourceHolder.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Book\Projectile.hpp">
+    <ClInclude Include="App\Resource\ResourceIdentifiers.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Book\DataTables.hpp">
+    <ClInclude Include="Game\GUI\Button.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Book\Pickup.hpp">
+    <ClInclude Include="Game\GUI\Component.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Book\GameOverState.hpp">
+    <ClInclude Include="Game\GUI\Container.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Book\Animation.hpp">
+    <ClInclude Include="Game\GUI\Label.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Book\Particle.hpp">
+    <ClInclude Include="App\Resource.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Book\ParticleNode.hpp">
+    <ClInclude Include="App\Util.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Book\EmitterNode.hpp">
+    <ClInclude Include="Game\StateMachine\States\GameOverState.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Book\BloomEffect.hpp">
+    <ClInclude Include="Game\StateMachine\States\GameState.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Book\PostEffect.hpp">
+    <ClInclude Include="Game\StateMachine\States\LoadingState.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Book\SoundPlayer.hpp">
+    <ClInclude Include="Game\StateMachine\States\MenuState.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Book\SoundNode.hpp">
+    <ClInclude Include="Game\StateMachine\States\MultiplayerGameState.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Book\MusicPlayer.hpp">
+    <ClInclude Include="Game\StateMachine\States\PauseState.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Book\KeyBinding.hpp">
+    <ClInclude Include="Game\StateMachine\States\SettingsState.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Book\NetworkNode.hpp">
+    <ClInclude Include="Game\StateMachine\States\TitleState.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Book\NetworkProtocol.hpp">
+    <ClInclude Include="Game\StateMachine\State.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Book\GameServer.hpp">
+    <ClInclude Include="Game\StateMachine\StateIdentifiers.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Book\MultiplayerGameState.hpp">
+    <ClInclude Include="Game\StateMachine\StateStack.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\StateMachine\StateControl.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\GUI.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\Nodes\Audio.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\Nodes\Network.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\Nodes\CommandControl.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\Nodes\Graphics\TextNode.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\Nodes\Graphics\SpriteNode.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Game\Nodes\Graphics.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Book\ResourceHolder.inl">
+    <None Include="App\Util\Utility.inl">
       <Filter>Header Files</Filter>
     </None>
-    <None Include="Book\Utility.inl">
+    <None Include="App\Resource\ResourceHolder.inl">
       <Filter>Header Files</Filter>
     </None>
   </ItemGroup>

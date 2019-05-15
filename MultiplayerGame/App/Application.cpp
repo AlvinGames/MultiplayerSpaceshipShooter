@@ -1,14 +1,7 @@
-#include "Book/Application.hpp"
-#include "Book/Utility.hpp"
-#include "Book/State.hpp"
-#include "Book/StateIdentifiers.hpp"
-#include "Book/TitleState.hpp"
-#include "Book/GameState.hpp"
-#include "Book/MultiplayerGameState.hpp"
-#include "Book/MenuState.hpp"
-#include "Book/PauseState.hpp"
-#include "Book/SettingsState.hpp"
-#include "Book/GameOverState.hpp"
+#include "Application.hpp"
+
+#include "Util.hpp"
+#include "../Game/StateMachine/StateControl.hpp"
 
 
 const sf::Time Application::TimePerFrame = sf::seconds(1.f / 60.f);
@@ -128,4 +121,5 @@ void Application::registerStates()
 	mStateStack.registerState<SettingsState>(States::Settings);
 	mStateStack.registerState<GameOverState>(States::GameOver, "Mission Failed!");
 	mStateStack.registerState<GameOverState>(States::MissionSuccess, "Mission Successful!");
+	mStateStack.registerState<LoadingState>(States::Loading);
 }
