@@ -1,9 +1,11 @@
-#ifndef BOOK_STATESTACK_HPP
-#define BOOK_STATESTACK_HPP
+#pragma once
+
+#ifndef STATESTACK_HPP
+#define STATESTACK_HPP
 
 #include "State.hpp"
 #include "StateIdentifiers.hpp"
-#include "ResourceIdentifiers.hpp"
+//#include "ResourceIdentifiers.hpp"
 
 #include <SFML/System/NonCopyable.hpp>
 #include <SFML/System/Time.hpp>
@@ -93,4 +95,4 @@ void StateStack::registerState(States::ID stateID, Param1 arg1)
 	};
 }
 
-#endif // BOOK_STATESTACK_HPP
+#endif // STATESTACK_HPP
