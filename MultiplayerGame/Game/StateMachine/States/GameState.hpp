@@ -1,9 +1,11 @@
-#ifndef BOOK_GAMESTATE_HPP
-#define BOOK_GAMESTATE_HPP
+#pragma once
 
-#include "State.hpp"
-#include "World.hpp"
-#include "Player.hpp"
+#ifndef GAMESTATE_HPP
+#define GAMESTATE_HPP
+
+#include "../State.hpp"
+#include "../../World.hpp"
+#include "../../Player/Player.hpp"
 
 #include <SFML/Graphics/Sprite.hpp>
 #include <SFML/Graphics/Text.hpp>
@@ -24,4 +26,4 @@ private:
 	Player				mPlayer;
 };
 
-#endif // BOOK_GAMESTATE_HPP
+#endif // GAMESTATE_HPP

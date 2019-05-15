@@ -1,11 +1,11 @@
-#ifndef BOOK_SETTINGSSTATE_HPP
-#define BOOK_SETTINGSSTATE_HPP
+#pragma once
 
-#include "State.hpp"
-#include "Player.hpp"
-#include "Container.hpp"
-#include "Button.hpp"
-#include "Label.hpp"
+#ifndef SETTINGSSTATE_HPP
+#define SETTINGSSTATE_HPP
+
+#include "../State.hpp"
+#include "../../Player/Player.hpp"
+#include "../../GUI.hpp"
 
 #include <SFML/Graphics/Sprite.hpp>
 #include <SFML/Graphics/Text.hpp>
@@ -35,4 +35,4 @@ private:
 	std::array<GUI::Label::Ptr, 2 * PlayerAction::Count> 	mBindingLabels;
 };
 
-#endif // BOOK_SETTINGSSTATE_HPP
+#endif // SETTINGSSTATE_HPP

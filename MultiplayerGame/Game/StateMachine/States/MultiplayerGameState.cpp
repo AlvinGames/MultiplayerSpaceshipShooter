@@ -1,7 +1,6 @@
-#include "Book/MultiplayerGameState.hpp"
-#include "Book/MusicPlayer.hpp"
-#include "Book/Foreach.hpp"
-#include "Book/Utility.hpp"
+#include "MultiplayerGameState.hpp"
+#include "../../Nodes/Audio.hpp"
+#include "../../../App/Util.hpp"
 
 #include <SFML/Graphics/RenderWindow.hpp>
 #include <SFML/Network/IpAddress.hpp>
@@ -162,13 +161,13 @@ bool MultiplayerGameState::update(sf::Time dt)
 		if (mActiveState && mHasFocus)
 		{
 			CommandQueue& commands = mWorld.getCommandQueue();
-			FOREACH(auto& pair, mPlayers)
+			for (auto& pair : mPlayers)
 				pair.second->handleRealtimeInput(commands);
 		}
 
 		// Always handle the network input
 		CommandQueue& commands = mWorld.getCommandQueue();
-		FOREACH(auto& pair, mPlayers)
+		for (auto& pair : mPlayers)
 			pair.second->handleRealtimeNetworkInput(commands);
 
 		// Handle messages from server that may have arrived
@@ -221,8 +220,8 @@ bool MultiplayerGameState::update(sf::Time dt)
 			positionUpdatePacket << static_cast<sf::Int32>(Client::PositionUpdate);
 			positionUpdatePacket << static_cast<sf::Int32>(mLocalPlayerIdentifiers.size());
 			
-			FOREACH(sf::Int32 identifier, mLocalPlayerIdentifiers)
-			{			
+			for (sf::Int32 identifier : mLocalPlayerIdentifiers)
+			{
 				if (Aircraft* aircraft = mWorld.getAircraft(identifier))
 					positionUpdatePacket << identifier << aircraft->getPosition().x << aircraft->getPosition().y << static_cast<sf::Int32>(aircraft->getHitpoints()) << static_cast<sf::Int32>(aircraft->getMissileAmmo());
 			}
@@ -248,7 +247,7 @@ void MultiplayerGameState::disableAllRealtimeActions()
 {
 	mActiveState = false;
 
-	FOREACH(sf::Int32 identifier, mLocalPlayerIdentifiers)
+	for (sf::Int32 identifier : mLocalPlayerIdentifiers)
 		mPlayers[identifier]->disableAllRealtimeActions();
 }
 
@@ -258,7 +257,7 @@ bool MultiplayerGameState::handleEvent(const sf::Event& event)
 	CommandQueue& commands = mWorld.getCommandQueue();
 
 	// Forward event to all players
-	FOREACH(auto& pair, mPlayers)
+	for (auto& pair : mPlayers)
 		pair.second->handleEvent(event, commands);	
 
 	if (event.type == sf::Event::KeyPressed)

@@ -1,8 +1,7 @@
-#include "Book/MenuState.hpp"
-#include "Book/Button.hpp"
-#include "Book/Utility.hpp"
-#include "Book/MusicPlayer.hpp"
-#include "Book/ResourceHolder.hpp"
+#include "MenuState.hpp"
+#include "../../../App/Util.hpp"
+#include "../../Nodes/Audio.hpp"
+#include "../../../App/Resource.hpp"
 
 #include <SFML/Graphics/RenderWindow.hpp>
 #include <SFML/Graphics/View.hpp>

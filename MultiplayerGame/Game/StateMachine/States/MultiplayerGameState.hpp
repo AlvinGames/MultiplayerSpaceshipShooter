@@ -1,11 +1,12 @@
-#ifndef BOOK_MULTIPLAYERGAMESTATE_HPP
-#define BOOK_MULTIPLAYERGAMESTATE_HPP
+#pragma once
 
-#include "State.hpp"
-#include "World.hpp"
-#include "Player.hpp"
-#include "GameServer.hpp"
-#include "NetworkProtocol.hpp"
+#ifndef MULTIPLAYERGAMESTATE_HPP
+#define MULTIPLAYERGAMESTATE_HPP
+
+#include "../State.hpp"
+#include "../../World.hpp"
+#include "../../Player/Player.hpp"
+#include "../../Nodes/Network.hpp"
 
 #include <SFML/System/Clock.hpp>
 #include <SFML/Graphics/Text.hpp>
@@ -66,4 +67,4 @@ private:
 	sf::Time					mTimeSinceLastPacket;
 };
 
-#endif // BOOK_MULTIPLAYERGAMESTATE_HPP
+#endif // MULTIPLAYERGAMESTATE_HPP

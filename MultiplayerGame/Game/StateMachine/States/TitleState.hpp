@@ -1,7 +1,9 @@
-#ifndef BOOK_TITLESTATE_HPP
-#define BOOK_TITLESTATE_HPP
+#pragma once
 
-#include "State.hpp"
+#ifndef TITLESTATE_HPP
+#define TITLESTATE_HPP
+
+#include "../State.hpp"
 
 #include <SFML/Graphics/Sprite.hpp>
 #include <SFML/Graphics/Text.hpp>
@@ -25,4 +27,4 @@ private:
 	sf::Time			mTextEffectTime;
 };
 
-#endif // BOOK_TITLESTATE_HPP
+#endif // TITLESTATE_HPP

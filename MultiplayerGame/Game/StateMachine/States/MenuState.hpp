@@ -1,8 +1,10 @@
-#ifndef BOOK_MENUSTATE_HPP
-#define BOOK_MENUSTATE_HPP
+#pragma once
 
-#include "State.hpp"
-#include "Container.hpp"
+#ifndef MENUSTATE_HPP
+#define MENUSTATE_HPP
+
+#include "../State.hpp"
+#include "../../GUI.hpp"
 
 #include <SFML/Graphics/Sprite.hpp>
 #include <SFML/Graphics/Text.hpp>
@@ -23,4 +25,4 @@ private:
 	GUI::Container			mGUIContainer;
 };
 
-#endif // BOOK_MENUSTATE_HPP
+#endif // MENUSTATE_HPP

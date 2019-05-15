@@ -1,8 +1,10 @@
-#ifndef BOOK_GAMEOVERSTATE_HPP
-#define BOOK_GAMEOVERSTATE_HPP
+#pragma once
 
-#include "State.hpp"
-#include "Container.hpp"
+#ifndef GAMEOVERSTATE_HPP
+#define GAMEOVERSTATE_HPP
+
+#include "../State.hpp"
+#include "../../GUI.hpp"
 
 #include <SFML/Graphics/Sprite.hpp>
 #include <SFML/Graphics/Text.hpp>
@@ -23,4 +25,4 @@ private:
 	sf::Time			mElapsedTime;
 };
 
-#endif // BOOK_GAMEOVERSTATE_HPP
+#endif // GAMEOVERSTATE_HPP

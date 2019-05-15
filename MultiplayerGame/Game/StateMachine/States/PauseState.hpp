@@ -1,8 +1,10 @@
-#ifndef BOOK_PAUSESTATE_HPP
-#define BOOK_PAUSESTATE_HPP
+#pragma once
 
-#include "State.hpp"
-#include "Container.hpp"
+#ifndef PAUSESTATE_HPP
+#define PAUSESTATE_HPP
+
+#include "../State.hpp"
+#include "../../GUI.hpp"
 
 #include <SFML/Graphics/Sprite.hpp>
 #include <SFML/Graphics/Text.hpp>
@@ -26,4 +28,4 @@ private:
 	bool				mLetUpdatesThrough;
 };
 
-#endif // BOOK_PAUSESTATE_HPP
+#endif // PAUSESTATE_HPP
