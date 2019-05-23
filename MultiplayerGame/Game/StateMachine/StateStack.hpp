@@ -36,10 +36,8 @@ public:
 public:
 	explicit			StateStack(State::Context context);
 
-	template <typename T>
-	void				registerState(States::ID stateID);
-	template <typename T, typename Param1>
-	void				registerState(States::ID stateID, Param1 arg1);
+	template <typename T, typename... Param>
+	void				registerState(States::ID stateID, Param... arg);
 
 	void				update(sf::Time dt);
 	void				draw();
@@ -77,21 +75,12 @@ private:
 };
 
 
-template <typename T>
-void StateStack::registerState(States::ID stateID)
+template <typename T, typename... Param>
+void StateStack::registerState(States::ID stateID, Param... arg)
 {
-	mFactories[stateID] = [this]()
+	mFactories[stateID] = [this, arg...]()
 	{
-		return State::Ptr(new T(*this, mContext));
-	};
-}
-
-template <typename T, typename Param1>
-void StateStack::registerState(States::ID stateID, Param1 arg1)
-{
-	mFactories[stateID] = [this, arg1]()
-	{
-		return State::Ptr(new T(*this, mContext, arg1));
+		return State::Ptr(new T(*this, mContext, arg...));
 	};
 }
 

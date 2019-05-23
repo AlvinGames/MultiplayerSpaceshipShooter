@@ -4,10 +4,10 @@
 
 
 StateStack::StateStack(State::Context context)
-: mStack()
-, mPendingList()
-, mContext(context)
-, mFactories()
+	: mStack()
+	, mPendingList()
+	, mContext(context)
+	, mFactories()
 {
 }
 
@@ -26,7 +26,7 @@ void StateStack::update(sf::Time dt)
 void StateStack::draw()
 {
 	// Draw all active states from bottom to top
-	for(State::Ptr& state : mStack)
+	for (State::Ptr& state : mStack)
 		state->draw();
 }
 
@@ -72,28 +72,28 @@ State::Ptr StateStack::createState(States::ID stateID)
 
 void StateStack::applyPendingChanges()
 {
-	for(PendingChange change : mPendingList)
+	for (PendingChange change : mPendingList)
 	{
 		switch (change.action)
 		{
-			case Push:
-				mStack.push_back(createState(change.stateID));
-				break;
+		case Push:
+			mStack.push_back(createState(change.stateID));
+			break;
 
-			case Pop:
-				mStack.back()->onDestroy();
-				mStack.pop_back();
+		case Pop:
+			mStack.back()->onDestroy();
+			mStack.pop_back();
 
-				if (!mStack.empty())
-					mStack.back()->onActivate();
-				break;
+			if (!mStack.empty())
+				mStack.back()->onActivate();
+			break;
 
-			case Clear:
-				for(State::Ptr& state : mStack)
-					state->onDestroy();
+		case Clear:
+			for (State::Ptr& state : mStack)
+				state->onDestroy();
 
-				mStack.clear();
-				break;
+			mStack.clear();
+			break;
 		}
 	}
 
@@ -101,7 +101,7 @@ void StateStack::applyPendingChanges()
 }
 
 StateStack::PendingChange::PendingChange(Action action, States::ID stateID)
-: action(action)
-, stateID(stateID)
+	: action(action)
+	, stateID(stateID)
 {
 }
